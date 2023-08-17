@@ -14,4 +14,8 @@ public class DbInMemory {
         countries.add(new Country(1, "Kazakhstan", "Astana", "Kasyn-Jomart Toqaev", 19000000));
         countries.add(new Country(1, "France", "Paris", "Emmanuel Macrone", 82000000));
     }
+
+    public static boolean isCountryByName(String name){
+        return countries.stream().anyMatch(it->it.getName().equalsIgnoreCase(name));
+    }
 }
