@@ -10,5 +10,5 @@ public class Country {
     private String name;
     private String capital;
     private String president;
-    private double population;
+    private int population;
 }
