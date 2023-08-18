@@ -4,6 +4,7 @@ import by.itclass.model.entities.Country;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DbInMemory {
     private static List<Country> countries = new ArrayList<>();
@@ -15,10 +16,15 @@ public class DbInMemory {
         countries.add(new Country(4, "France", "Paris", "Emmanuel Macrone", 82000000));
     }
 
-    public static boolean isCountryByName(String name){
-        return countries.stream().anyMatch(it->it.getName().equalsIgnoreCase(name));
+    public static boolean isCountryByName(String name) {
+        return countries.stream().anyMatch(it -> it.getName().equalsIgnoreCase(name));
     }
-    public static Country findCountryByName(String name){
-        return countries.stream().filter(it->it.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+
+    public static Country findCountryByName(String name) {
+        return countries.stream().filter(it -> it.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+    }
+
+    public static List<Country> findCountriesById(int fromId, int toId) {
+        return countries.stream().filter(it -> it.getId() >= fromId && it.getId() <= toId).collect(Collectors.toList());
     }
 }
