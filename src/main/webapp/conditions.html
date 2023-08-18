@@ -6,13 +6,14 @@
 </head>
 <body>
 <h1>Search form: </h1>
-<form action="criteria" method="get"></form>
+<form action="criteria" method="post">
 Search by:<br>
 name:<input type="radio" name="criteria" value="name" checked>
-id:<input type="radio" name="criteria" value="id">
+id:<input type="radio" name="criteria" value="id"><br>
 Name: <input name="name"><br>
-From id: <input value="fromId"><br>
-To id: <input value="toId"><br>
+From id: <input name="fromId"><br>
+To id: <input name="toId"><br>
 <input type="submit" value="search">
+</form>
 </body>
 </html>
