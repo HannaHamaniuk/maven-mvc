@@ -18,7 +18,7 @@ public class DbInMemory {
     public static boolean isCountryByName(String name){
         return countries.stream().anyMatch(it->it.getName().equalsIgnoreCase(name));
     }
-    public static Country findUserByName(String name){
+    public static Country findCountryByName(String name){
         return countries.stream().filter(it->it.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
     }
 }
