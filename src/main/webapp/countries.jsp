@@ -11,7 +11,8 @@
 
 <h2>Countries:</h2>
 <c:forEach var="country" items="${countries}">
-<p>${country.id} ${country.name} ${country.capital} ${country.president} ${country.population}</p>
+<p>Id: ${country.id}; Name: ${country.name}; Capital: ${country.capital}; President: ${country.president};
+Population: ${country.population}</p>
 </c:forEach>
 
 </c:when>
